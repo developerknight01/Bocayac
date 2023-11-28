@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+
+ErrorDocument 403 http://localhost/Pruebas/bocayac/view/home/index
+ErrorDocument 404 http://localhost/Pruebas/bocayac/view/home/index
+ErrorDocument 500 http://localhost/Pruebas/bocayac/view/home/index
+
+RewriteEngine on
+
+Redirect /Pruebas/bocayac/index.html http://localhost/Pruebas/bocayac/view/home/index
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+#RewriteRule ^([a-z]+)/?$ $1.php [NC]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html
+#RewriteRule ^([a-z]+)/?$ $1.html [NC]
+
+
+
+</IfModule>

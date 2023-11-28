@@ -1,0 +1,156 @@
+img{
+    border-radius:10px;
+}
+.content{
+    width: 95%;
+    padding: 10px 0px 20px 0px;
+    margin: auto;
+    text-align: center;
+    border-bottom:5px solid transparent;
+    border-image:linear-gradient(0.25turn, white 0%, burlywood 50%, white 100%);
+    border-image-slice:1;
+}
+.content.carousel img{
+    object-fit: cover;
+    width: 450px;
+}
+.content.infoPaid{
+    background-color:#deb88714;    
+}
+.infoPaid .boxPaid{
+    width: 100%;
+    display:flex;
+    padding:20px;
+    margin: auto;
+}
+.infoPaid .boxPaid .paid{
+    width: 50%;
+    height:150px;
+    margin: auto;
+    border-right:5px solid transparent;
+    border-image:linear-gradient(0turn, white 0%, chocolate 50%, white 100%);
+    border-image-slice:1;
+}
+.boxPaid .paid span{        
+    font-size:25px;
+    margin:auto 15px;    
+}
+.boxPaid .paid h6{
+    font-size:15px;
+    margin-top:20px;
+}
+.boxPaid .paid p{
+    font-weight:100;
+}
+.boxPaid .paid .whatsapp,
+.boxPaid .paid .telegram{
+    opacity:70%;
+    cursor:pointer;
+}
+.boxPaid .paid .whatsapp:hover,
+.boxPaid .paid .telegram:hover{
+    opacity:100%;
+}
+.boxPaid .paid .whatsapp{
+    color:green;
+}
+.boxPaid .paid .telegram{
+    color:lightblue;
+}
+.content.products h4{    
+    text-shadow:0px 0px 1px chocolate;
+}
+.content.products h5{
+    margin-bottom:30px;
+    font-weight:400;
+}
+.content.products .boxProduct{
+    width: fit-content;
+    margin: auto;
+}
+.products .boxProduct:nth-child(4){
+    display:flex;    
+}
+.products .boxProduct:nth-child(4) .product{
+    width:fit-content;
+    margin:10px;    
+}
+.products .boxProduct .product img{
+    width:200px;    
+    cursor:zoom-in;
+    box-shadow:0px 0px 5px 0px black;
+}
+.products .boxProduct .product label{
+    font-weight:100;
+    margin-right:10px;
+}
+.products .boxProduct .product a{
+    color: cornflowerblue;
+    font-weight:100;
+}
+.products .boxProduct .product a:hover{
+    color: blue;
+    font-weight:600;
+}
+.content.aboutus{
+    background-color:#deb88714;
+}
+.content.aboutus h4{
+    margin-bottom:25px;
+}
+.content.aboutus .aboutus{
+    display:flex;
+    width:90%;
+    margin:auto;
+    text-align: center;
+}
+.aboutus img{
+    width:350px;
+    margin: auto 0px auto auto;
+    object-fit:cover;
+    box-shadow:0px 0px 5px 0px black;
+}
+.aboutus .aboutus div{
+    width: 40%;
+    height:fit-content;
+    margin: auto auto auto 30px;
+    padding:10px;
+    font-size:20px;
+    font-weight:100;
+    text-align:justify;
+}
+.aboutus .aboutus div p{
+    width: 100%;
+}
+@media screen and (max-width:700px){
+    .infoPaid .boxPaid{        
+        display:block;
+        padding:20px;
+        margin: auto;
+        width:100%;
+    }
+    .infoPaid .boxPaid .paid{
+        width:100%;
+        margin-bottom:20px;
+        border-right:0px solid transparent;        
+        border-bottom:5px solid transparent;
+        border-image:linear-gradient(0.25turn, white 0%, chocolate 50%, white 100%);
+        border-image-slice:1;
+    }   
+    .content.aboutus .aboutus{
+        display:block;        
+    }
+    .aboutus img{
+        width:250px;        
+    }
+    .aboutus .aboutus div{
+        width:100%;
+        margin:auto auto;
+        text-align:justify;
+    }
+}
+@media screen and (max-width:600px){
+    .products .boxProduct:nth-child(4){
+        display:block;    
+    }
+}

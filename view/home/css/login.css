@@ -1,0 +1,114 @@
+section{
+    position: relative;
+    width: 600px;
+    height: fit-content;
+    padding: 30px;
+    top: 20%;
+    bottom: 0;
+    left: -100%;
+    right: 0;
+    margin: auto;
+    box-shadow:0px 0px 5px 0px gray;
+    opacity:0%;
+    overflow:hidden;
+    visibility:hidden;
+    border-radius:10px;
+}
+section.active{
+    left:0%;
+    opacity:100%;
+    visibility:visible;
+}
+section .head{
+    width:100%;    
+}
+section .head,
+section .body{
+    margin-bottom:30px;
+}
+.head h5{
+    width:fit-content;
+    margin:auto;
+}
+section .body{
+    width: 100%;
+}
+.body .form__group{
+    margin-bottom:30px;
+    border-bottom:3px solid transparent;
+    border-image:linear-gradient(0.25turn,white 0%,burlywood 50%,white 100%);
+    border-image-slice:1;
+}
+.body .form__label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+    transform: translateY(0rem);
+}
+.body .form__input {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgb(240 240 240);
+    border: none;
+    width: 100%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    outline: none;
+    box-shadow: 0px 0px 0px 0px gray;
+}
+.body .form__input:hover{
+    box-shadow: 0px 0px 5px 0px gray;
+}
+.body .form__input:focus{
+    box-shadow: 0px 0px 5px 0px black;
+}
+.body .form__input.error{
+    animation-name: highlineErrorForm;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-timing-function: ease-in-out;
+}
+.body .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-4rem);
+    transform: translateY(-4rem);
+}
+section .footer{
+    width:100%;    
+}
+.footer a{    
+    display:block;
+    padding:5px;
+    margin-bottom:30px;
+}
+.footer button{
+    border:none;
+    width:100px;
+    height:40px;
+    border-radius:5px;
+    box-shadow:0px 0px 2px 0px black;
+    color:black;
+}
+.footer button:hover{
+    box-shadow: 0px 0px 5px 0px black;
+    background-color:cornflowerblue;
+    color:white;
+}
+@media screen and (max-width:900px){
+    section{
+        width:400px;
+    }
+}
+@media screen and (max-width:500px){
+    section{
+        width:300px;
+    }
+}

@@ -1,0 +1,271 @@
+:root{
+    --backgroundShadow:rgba(0, 0, 0, 0.37);
+}
+body{
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+body.blockScroll{
+    overflow-y: hidden;
+}
+*{
+    transition: 0.25s ease-in-out;
+}
+.error span,
+.error input{
+    animation-name: highlineError;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-timing-function: ease-in-out;
+}
+span i,
+span svg{
+    transition:unset !important;
+}
+.pageLoad{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: var(--backgroundShadow);
+    z-index: 3;
+    visibility: visible;
+    opacity: 100%;
+}
+.pageLoad.inactive{
+    z-index: -1;
+    opacity: 0%;
+    visibility: hidden;
+}
+.pageload .content-load{
+    width:fit-content;
+    margin:auto;
+    position:relative;
+    top: 50%;
+}
+.pageload .content-load .dot-pulse,
+.pageload .content-load .dot-pulse::after,
+.pageload .content-load .dot-pulse::before{
+    width:25px;
+    height:25px;
+    border-radius:20px;
+    background-color: bisque;
+    color: bisque;
+}
+header{
+    width: 100%;
+    padding: 10px;
+    margin: auto auto 15px auto;
+    background-image: radial-gradient(circle at center, white -50%, #d2691e2e 50%);
+}
+header img{
+    width:230px;
+    position:relative;
+    left:50px;
+    display: block;
+    margin:unset;
+}
+header .btnUX{
+    position: absolute;
+    top: 60px;
+    right: 2%;
+    font-size:26px;
+    cursor:pointer;
+    padding:5px;
+    color:gray;
+    display: inline-flex;  
+    z-index:1;
+}
+header .btnUX i,
+header .btnUX svg{
+    transition:none !important;
+}
+header .btnUX:hover{
+    color:rgb(158, 79, 23);
+}
+.navMenu{
+    position:absolute;
+    top:0px;
+    width:100%;
+    height:20%;
+    background-color:transparent;
+}
+.navMenu .barMenu{
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    width: fit-content;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0%;
+    visibility: hidden;
+    z-index: -1;
+}
+.navMenu .barMenu .bar{
+    display: block;
+    background-color: gray;
+    width: 30px;
+    height: 4px;
+    margin: 5px auto;
+}
+.navMenu .barMenu:hover .bar{
+    background-color:chocolate;
+}
+.navMenu .barMenu.active{
+    z-index:3;
+}
+.navMenu .barMenu.active .bar:nth-child(1),
+.navMenu .barMenu.active .bar:nth-child(4){
+    opacity:0%;
+    visibility:hidden;
+}
+.navMenu .barMenu.active .bar:nth-child(2){
+    transform:rotate(50deg) translateY(9px) translateX(-3px);
+}
+.navMenu .barMenu.active .bar:nth-child(3){
+    transform:rotate(130deg) translateY(10px) translateX(2px);
+}
+.navMenu .content-menu{
+    position:relative;
+    left:300px;
+    top:130px;
+    opacity:100%;
+    height:fit-content;
+    width:fit-content;    
+}
+.navMenu .content-menu ul{
+    list-style:none;
+    display:flex;    
+    margin:0;
+    padding:0;
+    cursor:pointer;
+}
+.navMenu .content-menu ul li{
+    margin:auto 10px;
+    font-size:20px;
+    --color:chocolate;
+    color: #0000;
+    padding-bottom: 0.1em;
+    background: 
+        linear-gradient(90deg,var(--color) 50%,#000 0) calc(100% - var(--optionHover,0%))/200% 100%,
+        linear-gradient(var(--color) 0 0) 0% 100%/var(--optionHover,0%) 0.1em no-repeat;
+    -webkit-background-clip: text,padding-box;
+    background-clip: text,padding-box;
+    transition: 0.5s;
+}
+.navMenu .content-menu ul li:hover,
+.navMenu .content-menu ul li.active{
+    --optionHover: 100%;
+}
+.navMenu .content-menu ul li a{
+    text-decoration:none;
+    color:gray;
+}
+.navMenu .content-menu ul li:hover a,
+.navMenu .content-menu ul li.active a{
+    color:black;
+}
+.navMenu .content-menu ul:nth-child(2){    
+    position:absolute;
+    top: 0px;
+    bottom:unset;
+    left: unset;        
+    right:-150px;
+}
+.navMenu .content-menu ul:nth-child(2) li{
+    color:gray;        
+}
+.bodyPage{
+    padding: 25px 5px;
+    border-radius:10px;    
+    width:95%;
+    margin: auto auto 50px auto;    
+}
+@media screen and (max-width:900px) {
+    header img{
+        left:0px;
+        margin:auto;
+    }
+    .navMenu .barMenu{
+        opacity: 100%;
+        visibility:visible;
+        z-index: 1;
+    }    
+    .navMenu{
+        height: 100%;
+        z-index: 0;
+        visibility: hidden;
+    }
+    .navMenu.active{
+        height:100%;
+        z-index: 2;
+        visibility:visible;
+        background-color: var(--backgroundShadow);
+    }
+    .navMenu .content-menu{
+        left:-100%;
+        top:0px;
+        opacity:0%;
+        width:300px;
+        height:100%;
+        padding: 15px;
+        background-color:white;
+        box-shadow: inset 0px 0px 5px 0px var(--backgroundShadow);
+        transition: .9s ease-in-out;
+    }
+    .navMenu.active .content-menu{
+        left:0%;
+        opacity:100%;
+    }
+    .navMenu .content-menu ul{
+        display:block;
+        position:relative;
+        top: 75px;
+        left: 10px;
+    }
+    .navMenu .content-menu ul li{
+        margin: 15px auto;
+    }
+    .navMenu .content-menu ul:nth-child(2){
+        display:block;
+        position:absolute;
+        top: unset;
+        bottom:10px;
+        left: 30px;    
+        right: unset;    
+    }
+    .navMenu .content-menu ul:nth-child(2) li{
+        color:gray;        
+    }
+}
+@keyframes highlineError {
+    0%{
+        border-top:1px solid #a52a2ab5 !important;
+        border-bottom:1px solid #a52a2ab5 !important;
+        border-left:1px solid #a52a2ab5 !important;
+        border-right:1px solid #a52a2ab5 !important;
+        background-color: transparent !important;
+    }
+    50%{
+        border-top:1px solid #6f0000b5;
+        border-bottom:1px solid #6f0000b5;
+        border-left:1px solid #6f0000b5;
+        border-right:1px solid #6f0000b5;
+        background-color:#6f0000b5 !important; 
+    }
+    70%,100%{
+        border-top:1px solid #a52a2ab5 !important;
+        border-bottom:1px solid #a52a2ab5 !important;
+        border-left:1px solid #a52a2ab5 !important;
+        border-right:1px solid #a52a2ab5 !important;
+        background-color: transparent !important;
+    }
+}

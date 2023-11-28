@@ -1,0 +1,37 @@
+.mision{
+    width: 100%;
+    padding: 25px;    
+}
+.mision .contentDescription{
+    width:100%;
+    text-align:justify;
+}
+.mision .contentDescription b{
+    display:block;
+    width:fit-content;
+    margin:auto;
+    font-size:26px;
+}
+.mision .contentDescription p{
+    width:50%;
+    margin:auto;
+    font-size:20px;
+}
+.mision .contentImg{
+    width: 100%;    
+    margin:50px auto;
+    text-align:center;
+}
+.mision .contentImg img{
+    width:450px;
+    border-radius:25px;    
+    box-shadow:0px 0px 10px 0px black;
+}
+@media screen and (max-width:700px){
+    .mision .contentDescription p{
+        width: 90%;
+    }
+    .mision .contentImg img{
+        width: 250px;
+    }
+}

@@ -1,0 +1,52 @@
+<div class="modalForm modalAlt">
+    <div class="modalAlt-dialog modalForm-dialog">
+        <div class="modalAlt-content modalForm-content">
+            <div class="modalAlt-head modalForm-head">
+                <h4 data-translation-section="headModal">Registrar Producto</h4>
+                <span class="btnCloseModal"><i class="fa-regular fa-circle-xmark"></i></span>
+            </div>
+            <form enctype="multipart/form-data" id="uploadProduct">
+                <div class="modalAlt-body modalForm-body">
+                    <div class="body">
+                        <div class="form__group">
+                            <input type="text" class="form__input" id="imgName" name="imgName" data-type="product" data-translation-placeholder="kindProduct" placeholder="Tipo de Mueble" required="" />
+                            <label for="name" class="form__label" data-translation-section="kindProduct">Tipo de Mueble</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="text" class="form__input" id="description" name="description" data-type="product" data-translation-placeholder="descriptionProduct" placeholder="Descipción" required="" />
+                            <label for="name" class="form__label" data-translation-section="descriptionProduct">Descripción</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="text" class="form__input" id="dimension" data-type="dimension" data-translation-placeholder="dimensionProduct" placeholder="Dimensiones" required="" />
+                            <label for="name" class="form__label" data-translation-section="dimensionProduct">Dimensiones</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="number" class="form__input" id="price" data-type="price" data-translation-placeholder="priceProduct" placeholder="Precio" required="" />
+                            <label for="name" class="form__label" data-translation-section="priceProduct">Precio</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="text" class="form__input" id="wood" data-type="product" data-translation-placeholder="woodProduct" placeholder="Madera" required="" />
+                            <label for="name" class="form__label" data-translation-section="woodProduct">Madera</label>
+                        </div>                    
+                    </div>
+                    <div class="body">
+                        <div class="form__group">
+                            <input type="text" class="form__input" id="img" data-translation-placeholder="imgProduct" placeholder="Seleccionar Imagen" required="" />                                            
+                            <input type="file" id="imgSearch" name="img" data-type="img">
+                        </div>
+                        <div class="form__group" id="boxImg">                        
+                            <label for="name" class="form__label" data-translation-section="imgPrev">Preliminar</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modalAlt-footer modalForm-footer">
+                <button id="update" data-translation-section="btnUpdate">Actualizar</button>
+                <button id="send" data-translation-section="btnSend">Registrar</button>
+                <button id="cancel" data-translation-section="btnCancel">Cancelar</button>
+            </div>            
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="../../object/modal/modalForm.css">
+<script src="../../object/modal/modalForm.js"></script>

@@ -1,0 +1,213 @@
+.modalAlt{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0%;
+    background-color: rgba(0, 0, 0, 0.424);
+    overflow: auto;
+}
+.modalAlt.active{
+    opacity: 100%;
+    visibility: visible;
+    z-index: 2;
+    top: 0;
+}
+.modalAlt.hide{
+    opacity: 0%;
+    visibility: hidden;
+}
+.modalAlt .modalAlt-dialog{
+    width: 100vh;
+    top: 35px;
+    height: fit-content;
+    margin: auto;
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px brown;
+    transform: scale(0);
+    transition: .85s ease-in-out;    
+}
+.modalAlt.active .modalAlt-dialog{
+    transform: scale(1);
+}
+.modalAlt-dialog .modalAlt-content{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+.modalAlt-content .modalAlt-head{
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(0.25turn,white 0%,burlywood 50%, white 100%);
+    border-image-slice: 1;
+    margin-bottom: 15px;
+}
+.modalAlt-head .btnCloseModal{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 5px;
+    color: gray;
+    font-size: 18px;
+    cursor: pointer;
+    transform: rotate(0deg);
+}
+.modalAlt-head .btnCloseModal:hover{
+    color: black;
+    transform: rotate(180deg);
+}
+.modalAlt-content .modalAlt-body{
+    width: 100%;
+    margin-bottom: 15px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(0.25turn,white 0%,burlywood 50%, white 100%);
+    border-image-slice: 1;
+    display: inline-flex;
+}
+.modalForm-content .modalForm-body .body{
+    width: 50%;
+}
+.modalSearch-content .modalSearch-body .body,
+.modalConfirm-content .modalConfirm-body .body{
+    width:100%;
+}
+.modalConfirm-content .modalConfirm-body .body{
+    text-align:center;
+}
+.modalConfirm-content .modalConfirm-body .body h4{
+    margin-bottom:25px;
+}
+.modalForm-body .body:nth-child(2){
+    text-align: center;
+}
+.modalForm-body .body img,
+.modalSearch-body .body img{
+    width: 250px;
+    object-fit: contain;
+    margin: 25px auto;
+}
+#imgSearch, #img.hide,
+#newImgSearch,
+#update.hide,
+#send.hide{
+    display: none;
+}
+.form__label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+    transform: translateY(0rem);
+}
+.form__input {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgb(240 240 240);
+    border: none;
+    width: 90%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    outline: none;
+    box-shadow: 0px 0px 0px 0px gray;
+}
+.form__input:hover{
+    box-shadow: 0px 0px 5px 0px gray;
+}
+.form__input:focus{
+    box-shadow: 0px 0px 5px 0px black;
+}
+.form__input.error{
+    animation-name: highlineErrorForm;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-timing-function: ease-in-out;
+}
+.form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-4rem);
+    transform: translateY(-4rem);
+}
+.modalForm-content .modalForm-footer,
+.modalSearch-content .modalSearch-footer{
+    width: 100%;
+    text-align: end;
+}
+.modalForm-body #changeImg,
+.modalForm-footer button,
+.modalSearch-footer button,
+.modalConfirm button{
+    border:none;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: gray;
+    color: white;
+    height:45px;
+    width:110px;
+    box-shadow:0px 0px 5px 1px gray;
+}
+.modalSearch-footer button,
+.modalConfirm button,
+.modalForm-body #changeImg{
+    width: 180px;
+}
+.modalForm-body #changeImg{
+    margin-top:25px;
+}
+.modalForm-body #changeImg,
+.modalForm-footer #send,
+.modalForm-footer #update,
+.modalSearch-footer #send,
+.modalConfirm #disable{
+    background-color:lightgray;
+    color:black;
+    margin-right:20px;
+}
+.modalForm-footer #update:hover,
+.modalForm-footer #send:hover,
+.modalSearch-footer #send:hover,
+.modalConfirm #disable:hover{
+    background-color: lightblue;    
+}
+.modalForm-body #changeImg:hover,
+.modalForm-footer #cancel:hover,
+.modalSearch-footer #restar:hover,
+.modalConfirm #delete:hover{
+    background-color: black;
+    color: white;
+}
+@media screen and (max-width:900px){
+    .modalAlt .modalForm-dialog,
+    .modalAlt .modalSearch-dialog{
+        width: 95%;
+    }
+    .modalForm-content .modalForm-body,
+    .modalSearch-content .modalSearch-body{
+        display: block;
+    }
+    .modalForm-content .modalForm-body .body,
+    .modalSearch-content .modalSearch-body .body{
+        width: 100%;
+    }
+}
+@keyframes highlineErrorForm {
+    0%{        
+        background-color:rgb(240 240 240);                
+    }
+    50%{        
+        background-color:#6f00002e;        
+    }
+    70%,100%{        
+        background-color:rgb(240 240 240);
+    }
+}

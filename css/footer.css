@@ -1,0 +1,56 @@
+footer{
+    width: 100%;
+    border-top:3px solid transparent;
+    border-image:linear-gradient(0.25turn, white 0%, burlywood 50%, white 100%);
+    border-image-slice:1;
+    background-image: linear-gradient(0.25turn, burlywood 0%, white 50%, burlywood 100%);
+}
+footer .foot{
+    width: 100%;
+    display: flex;
+    padding: 50px;
+    text-align: center;
+}
+.foot aside{
+    width: 50%;
+}
+.foot ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+.foot ul li{
+    margin:15px auto;    
+    font-size:18px;
+    font-weight:100;
+    width:150px;
+    --padd: 0.1em;
+    --color: black;    
+    color: #0000;
+    padding-bottom: var(--padd);
+    background: 
+    linear-gradient(90deg,var(--color) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--color) 0 0) 0% 100%/var(--_p,0%) var(--padd) no-repeat;
+    -webkit-background-clip: text,padding-box;
+    background-clip: text,padding-box;
+    cursor:pointer;
+}
+.foot ul li:hover{
+    --_p: 100%
+}
+.foot ul li a{
+    text-decoration:none;
+    color:transparent;
+}
+.foot a{
+    display: block;
+}
+@media screen and (max-width:600px){
+    footer .foot{
+        padding: 10px;
+        display: block;
+    }
+    .foot aside{
+        width: 100%;
+    }
+}

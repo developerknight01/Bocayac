@@ -1,0 +1,157 @@
+.bodyPage{    
+    box-shadow:0px 0px 5px 0px gray;
+}
+.bodyPage .content-body{
+    width: 100%;
+    display: inline-flex;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.bodyPage .content-body .head{
+    width: fit-content;
+    display: flex;
+    margin: auto;
+}
+.bodyPage .content-body h4{
+    width:fit-content;
+    margin: auto 0;
+}
+.bodyPage .content-body .contentInfo{
+    width:100%;
+    max-height: 100vh;
+    margin-bottom:15px;
+    display:inline-block;
+    position: relative;
+    left: 0%;
+    opacity: 100%;
+    transition: .8s ease-in-out;
+}
+.bodyPage .content-body .contentInfo.move{
+    left: 100%;
+}
+.bodyPage .content-body .contentInfo.fade{
+    opacity: 0%;
+}
+.bodyPage .content-body .boxBtn{
+    width: fit-content;
+    padding: 10px;
+}
+.content-body .boxBtn .content-btn{
+    width: 150px;
+    text-align: center;
+    box-shadow: 0px 0px 2px 0px gray;
+    cursor:pointer;
+}
+.content-body .boxBtn .content-btn:hover{
+    box-shadow: 0px 0px 5px 0px black;
+}
+.content-body .boxBtn .content-btn .option{
+    width: fit-content;
+    text-align: center;
+    display: inline-flex;
+    cursor: pointer;
+}
+.content-body .boxBtn .content-btn .option label{
+    font-size: 0px;
+}
+.content-body .boxBtn .content-btn .option span{
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    color: gray;
+}
+.content-body .boxBtn .content-btn:hover .option label{
+    font-size: 20px;
+    cursor: pointer;
+}
+.content-body .boxBtn .content-btn:hover .option span{
+    color: black;
+}
+.content-body .contentInfo .box{
+    width: 90%;
+    margin: 15px auto;
+    padding:10px;
+    border-radius:5px;
+    border:1px solid brown;
+}
+.content-body .contentInfo .box .boxField{
+    width: 100%;
+    display:inline-flex;
+    padding:5px;    
+}
+.content-body .contentInfo .box .boxField table{
+    width:100%;
+}
+.content-body .contentInfo .box .boxField table thead{
+    height: 45px;
+}
+.content-body .contentInfo .box .boxField table thead tr th{
+    width:180px;    
+}
+.content-body .contentInfo .box .boxField table tbody img{
+    width:120px;
+    border-radius: 10px;
+    cursor: zoom-in;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover{
+    border:1px solid chocolate;
+    background-color: burlywood;
+    color: black;
+}
+@media screen and (max-width:900px) {
+    .bodyPage .content-body{
+        display: inline-block;
+    }
+}
+@media screen and (max-width:700px) {
+    .bodyPage{
+        display: block;
+    }
+    .content-body .contentInfo .box .boxField table tbody img{
+        width:200px;
+    }
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .fl-table thead{
+        width:100px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .content-body .contentInfo .box .boxField table thead tr th:nth-child(1){
+        width:unset;        
+        height:300px;
+    }
+    .fl-table tbody td:nth-child(1){
+        height:300px;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
